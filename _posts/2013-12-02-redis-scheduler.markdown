@@ -2,13 +2,14 @@
 layout: post
 title:  "Redis patterns, scheduler"
 date:   2013-12-03 17:09:10
-categories: redis
+categories: 
 ---
 
-Using Redis is pretty easy to create a simple, distributed and robust scheduler.
-How? Just using the [sorted set](http://redis.io/commands#sorted_set) structure.
+Using [Redis](http://redis.io) is pretty easy to create a simple,
+distributed and robust scheduler.
+How? Just using [sorted set](http://redis.io/commands#sorted_set) structure.
 Sorted set allows you to put inside not only an object but also a score.
-If you use as score a timestamp, you have **done**!
+If you use timestamp as score, you have **done**!
 
 A scheduler needs these three primitives:
 
@@ -27,9 +28,9 @@ and a basic ZREM
 ZREM scheduled_objects <object-id>
 {% endhighlight %}
 
-`get_expired` is harder, it needs to pop a fired element from the set and lock it
+`get_expired` is a bit harder, it needs to pop a fired element from the set and lock it
 for an amount of time, required by the worker to do the job with it.
-Before that time, the worker should already removed the item from the set.
+Before that time, the worker should already have removed the item from the set.
 Otherwise, if for any reason it failed (crashes for example), the object will
 fire again on another worker, we will handle failover in this way.
 
@@ -54,7 +55,8 @@ EXEC <script> 1 scheduled_objects <now> <now+lock_for>
 Finally you need a process-worker, written in any language you want that
 every N seconds polls redis using get_expired() primitive, getting jobs and running the work.
 
-Conclusion:
+### Conclusion
 
-Polling, scheduling precision of >= 0 and < polling interval. Bad words?
-Probably, but I think may be good tradeoff if the result is a scheduler with no master/slaves synchonizations, simplicity and robust failover.
+Weakpoints of this scheduler are: polling approach and schedule time precision,
+which is in the range *0 ≤ precision ≤ polling_interval*. But as a tradeoff,
+the result is a scheduler with no master/slaves synchonizations, simple and with good failover.

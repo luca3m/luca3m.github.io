@@ -1,3 +1,5 @@
 name: luca3m
 markdown: redcarpet
 pygments: true
+lessc: lessc
+exclude: [ bower_components, bower.json ]
