@@ -16,6 +16,8 @@ A scheduler needs these three primitives:
 2. remove(object) - removes object from queue
 3. get_expired() - get an expired object from the queue
 
+:::
+
 The former two primitives are pretty easy to implement, just use `ZADD` and `ZREM` command of redis, using the current timestamp (better in UTC) on ZADD:
 
 {% highlight bash %}
