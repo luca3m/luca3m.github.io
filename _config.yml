@@ -1,4 +1,5 @@
 name: luca3m
+url: "http://luca3m.github.io"
 markdown: redcarpet
 pygments: true
 lessc: lessc
