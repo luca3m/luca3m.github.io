@@ -1,6 +1,45 @@
 @import "bootstrap";
 @brand-primary: #CC0000;
+@linkedin-color: #196BB9;
+@twitter-color: #169CF1;
+@nav-link-hover-bg: transparent;
 
 a.link-license {
-  color: darken(@brand-primary, 20%);
+  color: darken(@brand-primary, 10%);
+}
+
+.btn-linkedin {
+  color: @linkedin-color;
+  font-weight: bold;
+}
+
+.btn-linkedin:hover {
+  color: darken(@linkedin-color, 10%);
+}
+
+.btn-twitter {
+  color: @twitter-color;
+  font-weight: bold;
+}
+
+.btn-twitter:hover {
+  color: darken(@twitter-color, 10%);
+}
+
+.navbar-luca3m {
+  .navbar-brand {
+    padding-left: 0px;
+    font-size: 32px;
+  }
+  .navbar-toggle {
+    font-size: 20px;
+  }
+}
+
+@media(max-width:767px) {
+  .navbar-luca3m {
+    a {
+      font-size: 20px;
+    }
+  }
 }
