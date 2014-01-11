@@ -9,7 +9,7 @@ module Jekyll
 # Expects a lessc: key in your _config.yml file with the path to a local less.js/bin/lessc
 # Less.js will require node.js to be installed
   class LessJsGenerator < Generator
-    safe true
+    safe false
     priority :low
     
     def generate(site)
@@ -21,7 +21,7 @@ module Jekyll
       
       # static_files have already been filtered against excludes, etc.
       less_path = site.config['source'] + "/css/application.less"
-      css_path = less_path.gsub(less_ext, '.css').gsub(src_root, dest_root)
+      css_path = less_path.gsub(less_ext, '.min.css').gsub(src_root, dest_root)
       css_dir = File.dirname(css_path)
       css_dir_relative = css_dir.gsub(dest_root, '')
       css_name = File.basename(css_path)
