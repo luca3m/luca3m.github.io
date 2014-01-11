@@ -21,7 +21,7 @@ module Jekyll
       
       # static_files have already been filtered against excludes, etc.
       less_path = site.config['source'] + "/css/application.less"
-      css_path = less_path.gsub(less_ext, '.min.css').gsub(src_root, dest_root)
+      css_path = less_path.gsub(less_ext, '.min.css')#.gsub(src_root, dest_root)
       css_dir = File.dirname(css_path)
       css_dir_relative = css_dir.gsub(dest_root, '')
       css_name = File.basename(css_path)
