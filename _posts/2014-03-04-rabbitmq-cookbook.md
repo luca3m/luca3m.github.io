@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "RabbitMQ Cookbook"
-date:   2014-02-21 23:10:10
+date:   2014-03-04 22:00:00
 categories: 
 ---
 
