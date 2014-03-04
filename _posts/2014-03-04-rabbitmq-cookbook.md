@@ -17,6 +17,6 @@ Also RabbitMQ has a lot of interesting features for dispatching messages, like d
 
 To learn something more about there is a book written by Sigismondo Boschi and Gabriele Santomaggio: [RabbitMQ Cookbook](http://www.packtpub.com/rabbitmq-cookbook/book). As the name _cookbook_ says, it's a set of recipes to quickly start using RabbitMQ. Understanding how it works by using it.
 
-Starting with simple message publishing and consuming, going to how to handle High Availability on broker failures. It's useful also to learn same good practices when using RabbitMQ. This book covers also the deploy process, for example an integeresting use case on AWS to achieve load balancing and dynamic grow of RabbitMQ instances to handle load spikes.
+Starting with simple message publishing and consuming, going to how to handle High Availability on broker failures. It's useful also to learn same good practices when using RabbitMQ. This book covers also the deploy process, for example an interesting use case on AWS to achieve load balancing and dynamic grow of broker instances to handle load spikes.
 
-Interesting are also usages from mobile clients, like iOS or Android apps. Which can bring a good _realtime_ experience in your apps, for games or social networkss. They are also explained, RabbitMQ it's compatible also with lightweight protocols like MQTT, which is suitable for embedded devices.
+Interesting are also usages from mobile clients, like iOS or Android apps. Which can bring a good _realtime_ experience in your apps, for games or social networks. They are also explained, RabbitMQ it's compatible also with lightweight protocols like MQTT, which is suitable for embedded devices.
