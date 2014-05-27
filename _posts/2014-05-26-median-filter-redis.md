@@ -6,7 +6,7 @@ categories:
 ---
 
 Recently I had to implement a median filter algorithm, I found Redis very powerful
-to accomplish it! A very simple solution and scalable.
+to accomplish this! A very simple solution and scalable.
 
 As described in [Wikipedia](http://en.wikipedia.org/wiki/Median_filter), Median
 filter works in this way: given a signal, output sample is the median of last N input
@@ -36,13 +36,13 @@ EXEC
 N elements will be stored, no more.
 
 To get median value we need to call `SORT` and then calculate median. SORT returns
-all values on that list, sorted by numerical order. I preferred
-to use a script, so Redis avoids returning non useful data to client:
+all values on that list, sorted by numerical order. I have preferred
+to use a script, so Redis avoids returning non useful data to clients:
 
 ```lua
-local list_key = KEYS[1] -- Argument passed to script
+local list_key = KEYS[1] -- Key of samples list
 
--- Sort values on list
+-- Sort values
 local sorted_values = redis.call("SORT", list_key)
 local size = #sorted_values
 local median = 0.0
@@ -53,7 +53,7 @@ if size % 2 == 0 then
 else
   median = sorted_values[(size+1)/2]
 end
--- Use to string because median value may be floating point
+-- Use tostring because median value may be floating point
 return tostring(median)
 ```
 
@@ -63,4 +63,4 @@ Calling this script it's easy:
 EVAL <script> 1 <yourkey>
 ```
 
-And it's done!
+Done!
