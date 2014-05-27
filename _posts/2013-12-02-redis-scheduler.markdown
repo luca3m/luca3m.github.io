@@ -2,7 +2,7 @@
 layout: post
 title:  "Redis patterns, scheduler"
 date:   2013-12-03 17:09:10
-categories: 
+categories:
 ---
 
 Using [Redis](http://redis.io) is pretty easy to create a simple,
@@ -37,7 +37,10 @@ fire again on another worker, we will handle failover in this way.
 To achieve this primitive, basic Redis commands are not useful, we need to use a script:
 
 {% highlight lua %}
+-- Get first element with score > now(), passed by client as ARGV[1]
 local res = redis.call('ZRANGEBYSCORE',KEYS[1],0,ARGV[1],'LIMIT',0,1)
+-- If there is an element, then lock it for a while. Means updating its score
+-- to now+<lock_delay>, passed by client as ARGV[2]
 if #res > 0 then
   redis.call('ZADD', KEYS[1], ARGV[2], res[1])
   return res[1]
@@ -49,7 +52,7 @@ end
 Used in this way:
 
 {% highlight bash %}
-EXEC <script> 1 scheduled_objects <now> <now+lock_for> 
+EXEC <script> 1 scheduled_objects <now> <now+lock_for>
 {% endhighlight %}
 
 Finally you need a process-worker, written in any language you want that
