@@ -33,7 +33,7 @@ It's wrong, if you do this mistake you are __biased__ and you cannot do a good j
 
 ## Focus on tasks, not on time
 
-Having free working hours is fantastic. It changes how you do your job, it's more important what you do and not when. I suggest to keep a more or less 8 hours workday but split it however you want. For example I split a day in 15 pomodoros and my goal is to complete them more or less. During the morning I go to the swimming pool, spend lunch time with my girlfriend, anything, then I go back and work till I finish my day.
+Having free working hours is fantastic. It changes how you do your job, it's more important what you do and not when. I suggest to keep a more or less 8 hours workday but split it however you want. For example I split a day in 15 pomodoros and my goal is to complete them more or less. During the morning I go to the swimming pool or spend lunch time with my girlfriend, anything; then I go back and work till I finish my day.
 
 ## Break your shift
 
