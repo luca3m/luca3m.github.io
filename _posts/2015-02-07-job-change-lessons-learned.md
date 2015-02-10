@@ -29,7 +29,7 @@ On my previous job I was unhappy because I stopped learning. If you stop learnin
 ## Don't fall in love
 
 I enjoyed so much working with Redis, one of the smartest database I know. I felt that everything could be solved with it.
-It's wrong, if you do this mistake you are __biased__ and you cannot do a good job. Different problems needs different solutions. If you are not neutral, you may not do the right choice.
+It's wrong, if you do this mistake you are __biased__ and you cannot do a good job. Different problems need different solutions. If you are not neutral, you may not do the right choice.
 
 ## Focus on tasks, not on time
 
