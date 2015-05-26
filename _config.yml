@@ -1,6 +1,6 @@
 name: luca3m blog
 url: "http://luca3m.me"
 markdown: redcarpet
-pygments: true
+highligher: rouge
 lessc: lessc
 exclude: [ "css/application.less", bower_components, bower.json ]
