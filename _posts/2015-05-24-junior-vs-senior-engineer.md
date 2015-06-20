@@ -22,7 +22,7 @@ A senior engineer has written a lot of software, he agrees with the junior about
 
 > Quote from [Joel Spolsky](http://www.joelonsoftware.com/articles/fog0000000069.html)
 
-So do we have to stay always with the same software because it works? And that's the problem, sometimes you need to change. I did two rewrite on my career, one succeeded and one not. Why? My answer now is that you need to rewrite if it *does not work*. If a software is not good because does not fit your scenario anymore, (because does not scale, because cannot provide more features or whatever) then may be an idea to rewrite or refactor. There is a subtle balance between the *bug shower* you will get and the gain you will accomplish with your change, is it worth to do it? Evaluating this is a job for a senior engineer.
+So do we have to stay always with the same software because it works? And that's the problem, sometimes you need to change. I did two rewrite on my career, one succeeded and one not. Why? My answer now is that you need to rewrite if it *does not work*. If a software is not good because does not fit your scenario anymore, (because does not scale, because cannot provide more features or whatever) then may be an idea to rewrite or refactor. There is a subtle balance between the **bug shower** you will get and the gain you will accomplish with your change, is it worth to do it? Evaluating this is a job for a senior engineer.
 
 ## Tools
 
@@ -40,6 +40,6 @@ The main problem is that reading software is harder than writing it, junior find
 
 ## Conclusion
 
-I learnt that any production software is always **bad**, everyone it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin writing a software you don't know what you want. Software it's like a sculture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change. The difference between a good software and a bad one is that a well written software is easy to change even if it has some bad practices inside.
+I learnt that any production software is always **bad**, it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin writing a software you don't know what you want. Software it's like a sculture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change. The difference between a good software and a bad one is that a well written software is easy to change even if it has some bad practices inside.
 
-Seniors engineer should bootstrap a software because they have more experiences about bad and good practices. Juniors instead can learn from them and provide their new ideas.
+Seniors engineer should bootstrap a software because they have more experience about bad and good practices. Juniors instead can learn from them and provide their new ideas.
