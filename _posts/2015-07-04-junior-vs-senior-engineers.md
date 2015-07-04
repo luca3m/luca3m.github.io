@@ -28,7 +28,7 @@ So do we have to stay always with the same software because it works? I did two 
 
 A senior engineer has worked with a bunch of technologies. Sometimes it's a trap, because he tends to deal with a problem using always the same tools, sometimes they are still good, sometimes not.
 
-A junior engineer has a great quality: *he knows nothing*. He sees problems from the first time and he can find solutions from a different angle that experienced engineers don't find. Junior engineers are amazed by new tools of any kind: languages, databases, frameworks etc.
+A junior engineer has a great quality: *he knows nothing*. He sees problems for the first time and he can find solutions from a different angle that experienced engineers don't find. Junior engineers are amazed by new tools of any kind: languages, databases, frameworks etc.
 
 Listening to them can led your project to new levels, fighting the attitude of staying inside the **well known** circle.
 
@@ -40,6 +40,6 @@ The main problem is that reading software is harder than writing it, junior find
 
 ## Conclusion
 
-I learnt that any production software is always **bad**, it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin writing a software it's like starting a journey without knowing the destination. Software it's like a sculpture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change.
+I learnt that any production software is always **bad**, it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin a project it's like starting a journey without knowing the destination. Software it's like a sculpture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change.
 
 The difference between a good software and a bad one is that a well written software is easier to change even if it has some bad practices inside.
