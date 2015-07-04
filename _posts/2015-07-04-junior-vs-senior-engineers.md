@@ -32,6 +32,14 @@ A junior engineer has a great quality: *he knows nothing*. He sees problems from
 
 Listening to them can led your project to new levels, fighting the attitude of staying inside the **well known** circle.
 
+## New projects
+
+When comes to a new project a junior engineer starts to write everything from scratch. Seniors instead tends to start from a similar tool and modify it to fullfill required needs. Why?
+
+The main problem is that reading software is harder than writing it, junior finds hard to read software written by others and so he prefers to start from scratch.
+
 ## Conclusion
 
-I learnt that any production software is always **bad**, it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin writing a software it's like starting a journey without knowing the destination. Software it's like a sculpture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change. The difference between a good software and a bad one is that a well written software is easier to change even if it has some bad practices inside.
+I learnt that any production software is always **bad**, it has some bad practices, 1000 lines of code functions, uses a database not good for the scope and more. This because when you begin writing a software it's like starting a journey without knowing the destination. Software it's like a sculpture, you start from a blank screen and begin to engraving your code. You discover step by step what your software should do and you can't start again from scratch at any change.
+
+The difference between a good software and a bad one is that a well written software is easier to change even if it has some bad practices inside.
