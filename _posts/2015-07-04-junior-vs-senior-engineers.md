@@ -3,7 +3,7 @@ layout: post
 title:  "Junior and senior engineers"
 ---
 
-3 years ago I got my first job as software engineer, there is a huge difference between writing university projects and shipping **real working**, I learnt a lot of things that forged my mind.
+3 years ago I got my first job as software engineer, there is a huge difference between writing university projects and shipping **real working** software, I learnt a lot of things that forged my mind.
 
 I started from writing little features and end up to bigger ones. Step by step I found patterns better then others, and learn how to write better quality code.
 
