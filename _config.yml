@@ -3,3 +3,5 @@ url: "http://luca3m.me"
 markdown: redcarpet
 lessc: lessc
 exclude: [ "css/application.less", bower_components, bower.json ]
+gems:
+  - jekyll-feed
