@@ -90,4 +90,4 @@ This is absolutely true: Linus Torvalds’ mantra is “never break userspace”
 
 Why php-fpm was using fork? It wasn’t the one to blame for it. Alpine linux uses muslc instead of glibc. Digging deeper, I found it uses the fork system call to implement the fork() function instead of clone, as glibc does. It’s probably because clone is more complicated to use.
 
-*Note: this blog post has been originally published on my company official [blog](http://sysdig.com/blog)*
+*Note: this blog post has been originally published on [Sysdig official blog](http://sysdig.com/blog)*
