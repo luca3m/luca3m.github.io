@@ -5,9 +5,9 @@ date:   2013-12-03 17:09:10
 categories:
 ---
 
-Using [Redis](http://redis.io) is pretty easy to create a simple,
+Using [Redis](https://redis.io) is pretty easy to create a simple,
 distributed and robust scheduler.
-How? Just using [sorted set](http://redis.io/commands#sorted_set) structure.
+How? Just using [sorted set](https://redis.io/commands#sorted_set) structure.
 Sorted set allows you to put inside not only an object but also a score.
 If you use timestamp as score, you have **done**!
 

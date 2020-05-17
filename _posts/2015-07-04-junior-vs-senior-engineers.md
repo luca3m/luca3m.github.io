@@ -19,7 +19,7 @@ A senior engineer has written a lot of software, he agrees with the junior about
 
 > The idea that new code is better than old is patently absurd. Old code has been used. It has been tested. Lots of bugs have been found, and they've been fixed. There's nothing wrong with it. It doesn't acquire bugs just by sitting around on your hard drive.
 
-> Quote from [Joel Spolsky](http://www.joelonsoftware.com/articles/fog0000000069.html)
+> Quote from [Joel Spolsky](https://www.joelonsoftware.com/articles/fog0000000069.html)
 
 So do we have to stay always with the same software because it works? I did two rewrite on my career, one succeeded and one not. Why? My answer now is that you need to rewrite if your software does not fit your scenario anymore: does not scale, cannot provide more features or whatever. There is a subtle balance between the **bug shower** you will get and the gain you will accomplish with your change. If it's worth to do it, you will succeed, if it's not worth you will probably fail.
 

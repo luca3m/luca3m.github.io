@@ -15,7 +15,7 @@ Our core piece of technology is the sysdig kernel module. It’s loaded into the
 
 This flow of events then goes to our sysdig userspace utility that reads them, parses them and allows you to do filtering and scripting on top.For example sysdig is able to isolate all network related activity of your database, sort processes based on docker containers, or tail the logs of your webserver. You can find a cheatsheet of common tasks [here](https://sysdig.com/blog/linux-troubleshooting-cheatsheet/).
 
-Our commercial product uses an agent is built on top of sysdig technology. But it uses system calls for a different purpose: we aggregate system, application, container, and statsd metrics across thousands of hosts and tens of thousands of containers. These are sent to our [backend service](http://www.sysdig.com), where you chart them, analyze, setup alerts and so on.
+Our commercial product uses an agent is built on top of sysdig technology. But it uses system calls for a different purpose: we aggregate system, application, container, and statsd metrics across thousands of hosts and tens of thousands of containers. These are sent to our [backend service](https://www.sysdig.com), where you chart them, analyze, setup alerts and so on.
 
 Ok, enough background, let’s get into the story.
 
@@ -72,7 +72,7 @@ sysdig -r php-fpm.scap proc.pid = 11830
 
 Why fork? On Linux, clone is the system call used to create new processes. And it’s the only system call I’d seen used so far.
 
-Doing a bit of research I found this [nice answer on stackoverflow](http://unix.stackexchange.com/questions/199686/fork-vs-clone-on-2-6-kernel-linux) stating that actually fork is the old system call used in linux to create new processes that has been superseded by clone.
+Doing a bit of research I found this [nice answer on stackoverflow](https://unix.stackexchange.com/questions/199686/fork-vs-clone-on-2-6-kernel-linux) stating that actually fork is the old system call used in linux to create new processes that has been superseded by clone.
 
 Then I went on the code we use to parse the clone event and I found that actually we were parsing cgroups info only on clone events and not fork or vfork.
 
@@ -90,4 +90,4 @@ This is absolutely true: Linus Torvalds’ mantra is “never break userspace”
 
 Why php-fpm was using fork? It wasn’t the one to blame for it. Alpine linux uses muslc instead of glibc. Digging deeper, I found it uses the fork system call to implement the fork() function instead of clone, as glibc does. It’s probably because clone is more complicated to use.
 
-*Note: this blog post has been originally published on [Sysdig official blog](http://sysdig.com/blog)*
+*Note: this blog post has been originally published on [Sysdig official blog](https://sysdig.com/blog)*

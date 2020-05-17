@@ -8,16 +8,16 @@ categories:
 Recently I had to implement a median filter algorithm, I found Redis very powerful
 to accomplish this! A very simple solution and scalable.
 
-As described in [Wikipedia](http://en.wikipedia.org/wiki/Median_filter), Median
+As described in [Wikipedia](https://en.wikipedia.org/wiki/Median_filter), Median
 filter works in this way: given a signal, output sample is the median of last N input
 samples, where N can be any positive integer number. Higher is N, more aggressive
 will be your filter.
 
 We need a store for last samples, in a FIFO way, pushing a new one
-will drop an older one. Redis provides [lists](http://redis.io/commands#list),
+will drop an older one. Redis provides [lists](https://redis.io/commands#list),
 which are perfect for this scope. Also we need to sort these samples in numerical order, to get every
 time we want the median value. Redis provides a
-[SORT](http://redis.io/commands/sort) command, which does this job.
+[SORT](https://redis.io/commands/sort) command, which does this job.
 
 I implemented these two primitives:
 
