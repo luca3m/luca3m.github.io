@@ -6,7 +6,7 @@ categories:
 ---
 Last October I did one of the hardest decision of my life, I __left my job__.
 
-It was my first experience, I joined that company for an internship and then I continued as a full-time engineer. They tought me what means beeing an engineer. I had a 9to5 job with a permanent position, some people may say they _have arrived_, what do you want more?
+It was my first experience, I joined that company for an internship and then I continued as a full-time engineer. They thaught me what means beeing an engineer. I had a 9to5 job with a permanent position, some people may say they _have arrived_, what do you want more?
 
 But after two years working there I started to be very stressed, every day I was losing the fun of what I was doing. I did a lot of amazing things, I have played a key role on a lot of core components of company platform. At a certain point, they gave me a task that made me very bored. I know that a job is not full of fun every day, you have to do things you love but also things you don't like at all. So I said to myself: Luca, complete this task, the next will be more interesting. This was the motivation I used in past and worked well.
 
