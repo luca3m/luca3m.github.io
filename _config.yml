@@ -3,5 +3,3 @@ url: "https://luca3m.me"
 markdown: kramdown
 lessc: lessc
 exclude: [ "css/application.less", bower_components, bower.json ]
-gems:
-  - jekyll-feed
