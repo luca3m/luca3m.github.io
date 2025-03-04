@@ -1,5 +1,4 @@
 name: luca3m blog
 url: "https://luca3m.me"
 markdown: kramdown
-lessc: lessc
 exclude: [ "css/application.less", bower_components, bower.json ]
