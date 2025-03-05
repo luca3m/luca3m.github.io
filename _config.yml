@@ -2,3 +2,4 @@ name: luca3m blog
 url: "https://luca3m.me"
 markdown: kramdown
 exclude: [ "css/application.less", bower_components, bower.json ]
+permalink: /:year/:month/:day/:title/
