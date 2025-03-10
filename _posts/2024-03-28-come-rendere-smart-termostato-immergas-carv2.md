@@ -2,6 +2,7 @@
 layout: post
 title:  "Come rendere smart il termostato Immergas CARV2"
 excerpt: "Come trasformare un termostato Immergas CARV2 in un termostato smart utilizzando un interruttore Sonoff e un relé, per controllarlo da remoto e creare automazioni."
+categories: italian
 ---
 
 Recentemente ho acquistato una casa dotata del termostato [Immergas CARV2](https://www.amazon.it/Comando-Amico-Remoto-Cronotermostato-Immergas/dp/B01LX0HJUC).

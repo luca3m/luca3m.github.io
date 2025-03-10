@@ -1,0 +1,45 @@
+---
+# This yaml frontmatter is required for jekyll to process the file
+---
+
+@import "tailwindcss";
+
+p {
+  @apply mb-6;
+}
+
+h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+ul {
+  @apply list-disc list-inside mb-4;
+}
+
+blockquote {
+  @apply pl-4 border-l-4 border-gray-300 dark:border-gray-600 mb-4 italic;
+}
+
+blockquote p {
+  @apply mb-0;
+}
+
+pre {
+  @apply mb-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-x-auto;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+pre code {
+  @apply block;
+}
+
+:not(pre) > code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded;
+}

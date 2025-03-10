@@ -1,54 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{{ page.title }}</title>
-  <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="/css/application.min.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-      <nav class="navbar navbar-luca3m" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="btn btn-link navbar-toggle" data-toggle="collapse" data-target="#collapsed-menu">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="glyphicon glyphicon-info-sign"></span>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <!-- Navigation -->
+      <nav class="py-6">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-xl font-bold hover:text-red-500 transition-colors">{{ site.name }}</a>
+          
+          <!-- Mobile menu button -->
+          <button type="button" class="md:hidden p-2 cursor-pointer" id="mobile-menu-button">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
           </button>
-          <a class="navbar-brand" href="/">{{ site.name }}</a>
+
+          <!-- Navigation links -->
+          <div class="hidden md:flex space-x-4" id="menu-items">
+            <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" class="font-bold hover:text-red-500 transition-colors">LinkedIn</a>
+            <a href="mailto:lucam@hey.com" target="_blank" class="font-bold hover:text-red-500 transition-colors">Email</a>
+          </div>
         </div>
 
-        <div class="collapse navbar-collapse navbar-right" id="collapsed-menu">
-          <ul class="nav navbar-nav">
-            <li><a class="btn btn-link btn-linkedin" target="_blank" href="https://www.linkedin.com/in/lucamarturana/" >LinkedIn</a></li>
-            <li><a class="btn btn-link" style="font-weight: bold;" target="_blank" href="mailto:lucam@hey.com">Email</a></li>
-          </ul>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden mt-4" id="mobile-menu">
+          <div class="flex flex-col space-y-4">
+            <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" class="font-bold hover:text-red-500 transition-colors">LinkedIn</a>
+            <a href="mailto:lucam@hey.com" target="_blank" class="font-bold hover:text-red-500 transition-colors">Email</a>
+          </div>
         </div>
       </nav>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12">
+      <!-- Main content -->
+      <main class="py-8">
         {{ content }}
-      </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="py-6">
+        <div class="flex justify-end">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Copyright © 2014-2025 Luca Marturana. 
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="hover:text-red-500 transition-colors">License</a>
+          </p>
+        </div>
+      </footer>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-4 col-md-offset-6">
-      <p class="text-right"><small>Copyright © 2014-2025 Luca Marturana. <a class="link-license" href="https://creativecommons.org/licenses/by-sa/4.0/">License</a>.</small></p>
-      </div>
-    </div>
-  </div>
-</body>
+    <script>
+      // Mobile menu toggle
+      document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
 </html>
