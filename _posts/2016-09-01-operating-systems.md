@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Operating systems are a huge pile of technical debt"
+categories: english
 ---
 
 Developers are responsible for creating new, powerful software. This is what we do, day in and day out. But much of the software we create is based on the work of others. It’s not only their software from yesterday, but also from years or decades before. That creates a complex set of challenges when it comes to understanding the behavior of our own software, let alone someone else’s. 

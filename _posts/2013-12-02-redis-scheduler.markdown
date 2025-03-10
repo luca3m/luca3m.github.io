@@ -2,7 +2,7 @@
 layout: post
 title:  "Redis patterns, scheduler"
 date:   2013-12-03 17:09:10
-categories:
+categories: english
 ---
 
 Using [Redis](https://redis.io) is pretty easy to create a simple,

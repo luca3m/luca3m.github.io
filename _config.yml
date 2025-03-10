@@ -6,3 +6,6 @@ permalink: /:year/:month/:day/:title/
 
 plugins:
   - jekyll-tailwindcss
+
+tailwind:
+  config: "tailwind.config.js"

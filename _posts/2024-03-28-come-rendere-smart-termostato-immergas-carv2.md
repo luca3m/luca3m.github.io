@@ -25,7 +25,12 @@ I componenti che ho usato sono i seguenti:
 * [Relé](https://www.amazon.it/FINDER-40-52-9-012-0000-Finder/dp/B0018L3QJW/ref=sr_1_30?__mk_it_IT=ÅMÅŽÕÑ&crid=1DLL3AS4YCZPZ&dib=eyJ2IjoiMSJ9.D1HdKUPWFTBWjPcgoSOQaoryJJAPbds2kud855fOumDdY09GwDpixG7RhKJyi4Bqim47CpWoHRm8RCQOgE0Vjozcexey5LQnrRN15i-hmxU.qu4RJ_6h9NNhBtMGUC9XN5hnMYT1XCSDwQirz4Y9O1E&dib_tag=se&keywords=rele%2B220v&qid=1711573530&s=industrial&sprefix=rele%2B220%2Cindustrial%2C123&sr=1-30&th=1), questo è necessario perché l'uscita a line out del Sonoff non sarebbe adatta come ingresso al CAR
 * [Un interruttore fisico](https://www.amazon.it/Gebildet-5pcs-Impermeabile-Interruttore-Pulsante/dp/B088D933J2/ref=sr_1_9?dib=eyJ2IjoiMSJ9.NhyY4Uk9bDwZj2zW2mk8DbN28tzITgMauAGtM5Is_TSn_O7M0klWrxcSJwC9N9RHYXyWFMVQ9kdWnguQKaBJibXWVjkzQKJt5ytUbq9XxHdki83q5ZETN_DTf2GEs-PF-koafUgv1cqAv3KB1F11-BfVYmvrNaYx9AHo2RZoTPb4lOLf3rw0VDQXkznZt7-1T6e4hVKO9expfVCAP4u_G4ZgMbnEuiRAFNItCu8hTG9tT3l9FPiHC39tPFgfqVwaao_Ybwg4tVerS6s9UGEZ1u4id1o1m01eHPGqMVwO13A.0t5ME30wp08fk6RDy8jrocMfIN-2JOKPnB5R-qScdE0&dib_tag=se&keywords=mini+interruttore&qid=1711573597&sr=8-9), per azionare manualmente il Sonoff
 
-![Schematico di collegamento dei componenti](/assets/images/carv2.png)
+<div class="flex flex-col items-center mt-8 mb-8">
+  <img src="/assets/images/carv2.png" alt="Schematico di collegamento dei componenti" class="max-w-[500px]">
+  <div class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2">
+    Schema di collegamento dei componenti per rendere smart il termostato CARV2
+  </div>
+</div>
 
 In questo modo è possibile accendere e spegnere il termostato tramite l'interruttore smart. Infatti quando l'uscita del Sonoff è accesa, il relé chiude il circuito del morsetto TEL del CARV2 che permette di configurarlo in due modi:
 
@@ -34,11 +39,15 @@ In questo modo è possibile accendere e spegnere il termostato tramite l'interru
 
 Potete trovare tutti questi dettagli sul [manuale](https://www.immergas.com/media/Accessorio/63cc1ddc3fdcb6a15d9d0a8c/CAR_V2-1038958_001_01856.pdf) dell'apparecchio.
 
-**Attenzione**: il CARV2 deve essere in modalità **estiva** per poter accendere e spegnere il riscaldamento in maniera remota. Per questo motivo secondo me è utile avere un interruttore fisico in modo da usare sempre quello per accendere/spegnere il riscaldamento
+<div class="bg-yellow-200 dark:bg-yellow-800 rounded-lg p-4 mb-6">
+  <span class="font-bold">Attenzione</span>: il CARV2 deve essere in modalità <span class="font-bold">estiva</span> per poter accendere e spegnere il riscaldamento in maniera remota. Per questo motivo secondo me è utile avere un interruttore fisico in modo da usare sempre quello per accendere/spegnere il riscaldamento
+</div>
 
 # Conclusioni
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jShwcY1Htkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="flex justify-center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jShwcY1Htkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Il Sonoff può essere collegato ad HomeKit, Alexa o Google Home, consentendo così di creare automazioni che attivano o disattivano il termostato in base alla presenza di persone in casa, a orari predefiniti, e così via.
 

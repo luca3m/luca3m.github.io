@@ -2,7 +2,7 @@
 layout: post
 title:  "Job change, lessons learned"
 date:   2015-02-07 20:00:00
-categories:
+categories: english
 ---
 Last October I did one of the hardest decision of my life, I __left my job__.
 

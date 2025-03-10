@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Junior and senior engineers"
+categories: english
 ---
 
 3 years ago I got my first job as software engineer, there is a huge difference between writing university projects and shipping **real working** software, I learnt a lot of things that forged my mind.

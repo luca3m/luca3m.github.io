@@ -16,8 +16,11 @@
           
           <!-- Mobile menu button -->
           <button type="button" class="md:hidden p-2 cursor-pointer" id="mobile-menu-button">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
 
@@ -54,9 +57,41 @@
     </div>
 
     <script>
-      // Mobile menu toggle
+      // Add transition styles
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
+      mobileMenu.style.transformOrigin = 'top';
+
+      // Mobile menu toggle with animation
       document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+        
+        if (mobileMenu.classList.contains('hidden')) {
+          // Show menu
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.style.transform = 'scaleY(0)';
+          mobileMenu.style.opacity = '0';
+          
+          // Force reflow
+          mobileMenu.offsetHeight;
+          
+          // Animate in
+          mobileMenu.style.transform = 'scaleY(1)';
+          mobileMenu.style.opacity = '1';
+        } else {
+          // Animate out
+          mobileMenu.style.transform = 'scaleY(0)';
+          mobileMenu.style.opacity = '0';
+          
+          // Hide after animation
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+        }
+
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
       });
     </script>
   </body>

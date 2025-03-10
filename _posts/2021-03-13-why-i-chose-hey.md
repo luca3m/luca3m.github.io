@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Why I chose Hey"
+categories: english
 ---
 
 As work is becoming remote, I’m realizing that writing skills are more and more essential. To further practice my skills of writing concisely and effectively, I’m going to try writing in a blog post here and there. I’m gonna start this one by talking about why I chose Hey for my email.

@@ -2,7 +2,7 @@
 layout: post
 title:  "Median filter with Redis"
 date:   2014-05-27 20:56:00
-categories:
+categories: english
 ---
 
 Recently I had to implement a median filter algorithm, I found Redis very powerful

@@ -2,7 +2,7 @@
 layout: post
 title:  "Being a computer engineer"
 date:   2014-04-12 22:00:00
-categories:
+categories: english
 ---
 
 Some time ago, at work, seeing me disappointed for what was happening,
