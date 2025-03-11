@@ -1,7 +1,7 @@
 name: luca3m blog
 url: "https://luca3m.me"
 markdown: kramdown
-exclude: [ "css/application.less", bower_components, bower.json ]
+exclude: [ "tailwind.config.js", "README.md", "CNAME" ]
 permalink: /:year/:month/:day/:title/
 
 plugins:
