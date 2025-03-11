@@ -313,7 +313,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed
   jekyll-tailwindcss
 
 BUNDLED WITH
