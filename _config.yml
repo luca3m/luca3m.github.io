@@ -1,4 +1,7 @@
 name: luca3m blog
+title: luca3m blog
+tagline: "A blog about software development and other things"
+description: "A blog about software development and other things"
 url: "https://luca3m.me"
 markdown: kramdown
 exclude: [ "tailwind.config.js", "README.md", "CNAME" ]
@@ -6,6 +9,16 @@ permalink: /:year/:month/:day/:title/
 
 plugins:
   - jekyll-tailwindcss
-
+  - jekyll-seo-tag
+  - jekyll-feed
 tailwind:
   config: "tailwind.config.js"
+
+social:
+  name: Luca Marturana
+  links:
+    - https://www.linkedin.com/in/lucamarturana/
+
+author:
+  name: Luca Marturana
+  url: https://www.luca3m.me
