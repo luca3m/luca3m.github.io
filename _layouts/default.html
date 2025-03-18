@@ -12,7 +12,7 @@
   <body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
     <div class="container mx-auto px-4 max-w-4xl">
       <!-- Navigation -->
-      <nav class="py-6">
+      <nav class="py-6 print:hidden">
         <div class="flex items-center justify-between">
           <a href="/" class="text-xl font-bold hover:text-red-500 transition-colors">{{ site.name }}</a>
           
@@ -28,6 +28,7 @@
 
           <!-- Navigation links -->
           <div class="hidden md:flex space-x-4" id="menu-items">
+            <a href="/resume" class="font-bold hover:text-red-500 transition-colors">Resume</a>
             <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" class="font-bold hover:text-red-500 transition-colors">LinkedIn</a>
             <a href="mailto:lucam@hey.com" target="_blank" class="font-bold hover:text-red-500 transition-colors">Email</a>
           </div>
@@ -36,6 +37,7 @@
         <!-- Mobile menu -->
         <div class="hidden md:hidden mt-4" id="mobile-menu">
           <div class="flex flex-col space-y-4">
+            <a href="/resume" class="font-bold hover:text-red-500 transition-colors">Resume</a>
             <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" class="font-bold hover:text-red-500 transition-colors">LinkedIn</a>
             <a href="mailto:lucam@hey.com" target="_blank" class="font-bold hover:text-red-500 transition-colors">Email</a>
           </div>
