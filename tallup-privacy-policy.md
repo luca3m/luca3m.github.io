@@ -46,8 +46,7 @@ TallUp! does not knowingly collect any data from anyone, including children unde
 
 If you have any questions about this Privacy Policy or TallUp!, please contact us at:
 
-Email: privacy@tallupapp.com  
-Postal Address: TallUp! Privacy Team, 123 App Street, Mobileville, CA 94101
+Email: lucam@hey.com  
 
 ## Legal Compliance
 
