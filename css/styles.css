@@ -43,3 +43,7 @@ pre code {
 :not(pre) > code {
   @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded;
 }
+
+p a {
+  @apply underline hover:text-red-500 transition-colors;
+}
