@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programming in the AI Age"
-date: 2025-03-18
+date: 2025-03-28
 categories: english, tech
 description: "Exploring how artificial intelligence is transforming software development and the role of programmers in an AI-augmented future"
 tags: [programming, artificial intelligence, software development, future of coding]
