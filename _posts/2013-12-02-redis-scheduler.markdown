@@ -58,7 +58,7 @@ EXEC <script> 1 scheduled_objects <now> <now+lock_for>
 Finally you need a process-worker, written in any language you want that
 every N seconds polls redis using get_expired() primitive, getting jobs and running the work.
 
-### Conclusion
+# Conclusion
 
 Weakpoints of this scheduler are: polling approach and schedule time precision,
 which is in the range *0 ≤ precision ≤ polling_interval*. But as a tradeoff,

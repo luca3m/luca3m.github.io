@@ -20,6 +20,10 @@ ul {
   @apply list-disc list-inside mb-4;
 }
 
+ol {
+  @apply list-decimal list-inside mb-4;
+}
+
 blockquote {
   @apply pl-4 border-l-4 border-gray-300 dark:border-gray-600 mb-4 italic;
 }
@@ -45,5 +49,9 @@ pre code {
 }
 
 p a {
+  @apply underline hover:text-red-500 transition-colors;
+}
+
+li a {
   @apply underline hover:text-red-500 transition-colors;
 }
