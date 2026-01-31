@@ -43,177 +43,129 @@ title: Resume - Luca Marturana
   <section>
     <h2 class="text-2xl font-bold mb-4">Experience</h2>
     <div class="space-y-8">
-      <!-- Spark -->
-      <div class="border-l-4 border-gray-500 pl-4">
-        <div class="flex justify-between items-start mb-2">
-          <div>
-            <h3 class="text-xl font-semibold">Chief Architect</h3>
-            <h4 class="text-lg text-gray-600 dark:text-gray-400">Spark</h4>
-          </div>
-          <div class="text-right">
-            <span class="text-sm text-gray-600 dark:text-gray-400">Feb 2026 - Present</span>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Remote</p>
-          </div>
-        </div>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">Working with the CEO to design and build the core technical architecture of the product. Focused on making good technical decisions early, keeping systems simple, building foundations that scale and supporting early team growth.</p>
-      </div>
 
-      <!-- Luca3m tech -->
-      <div class="border-l-4 border-red-500 pl-4">
-        <div class="flex justify-between items-start mb-2">
-          <div>
-            <h3 class="text-xl font-semibold">Fractional Software Engineer</h3>
-            <h4 class="text-lg text-gray-600 dark:text-gray-400">Self-employed</h4>
-          </div>
-          <div class="text-right">
-            <span class="text-sm text-gray-600 dark:text-gray-400">Sep 2024 - Jan 2026</span>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Catania, Italy</p>
-          </div>
-        </div>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">Helping companies build software and teams and exploring new business ideas.</p>
-      </div>
+      {% include resume/job.html
+        title="Chief Architect"
+        company="Spark"
+        date="Feb 2026 - Present"
+        location="Remote"
+        description="Working with the CEO to design and build the core technical architecture of the product. Focused on making good technical decisions early, keeping systems simple, building foundations that scale and supporting early team growth."
+        border="red"
+      %}
 
-      <!-- Career Break -->
-      <div class="border-l-4 border-slate-500 pl-4">
-        <div class="flex justify-between items-start mb-2">
-          <div>
-            <h3 class="text-xl font-semibold">Career Break</h3>
-          </div>
-          <div class="text-right">
-            <span class="text-sm text-gray-600 dark:text-gray-400">Dec 2023 - Sep 2024</span>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Catania, Italy</p>
-          </div>
-        </div>
-        <p class="text-gray-700 dark:text-gray-300">Taking a break after 11 years in the industry. Spent this time raising my kids, doing more exercise, sleep - and exploring business ideas.</p>
-      </div>
+      {% include resume/job.html
+        title="Fractional Software Engineer"
+        company="Self-employed"
+        date="Sep 2024 - Jan 2026"
+        location="Catania, Italy"
+        description="Helping companies build software and teams and exploring new business ideas."
+        border="gray"
+      %}
 
-      <!-- Brex Group -->
-      <div class="relative border-l-4 border-red-500">
-        <div class="pl-4">
-          <!-- Company header -->
-          <div class="mb-6">
-            <h4 class="text-lg font-bold text-gray-600 dark:text-gray-400">
-              <a href="https://www.brex.com" class="hover:underline" target="_blank">Brex</a>
-            </h4>
-            <p class="text-sm text-gray-600 dark:text-gray-400">San Francisco Bay Area</p>
-          </div>
+      {% include resume/job.html
+        title="Career Break"
+        date="Dec 2023 - Sep 2024"
+        location="Catania, Italy"
+        description="Taking a break after 11 years in the industry. Spent this time raising my kids, doing more exercise, sleep - and exploring business ideas."
+        border="red"
+      %}
 
-          <!-- Staff Engineer Role -->
-          <div class="mb-8 relative">
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="text-xl font-semibold">Staff Software Engineer</h3>
-              <span class="text-sm text-gray-600 dark:text-gray-400">Mar 2021 - Dec 2023</span>
-            </div>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Revamped billing system and worked across cross-functional teams</li>
-              <li>Led the Card Fraud team to ship automation for fraud transactions and modernized dispute management (90% reduction in CX cases)</li>
-              <li>Led the next-generation global payments platform to unify money movement across all products, cutting time to market for new products by 50%</li>
-              <li>Led team implementation of a new banking partner for Brex Cash product</li>
-              <li>Led multi-team effort to implement initial version of Global Reimbursements</li>
-              <li>Served as group tech lead of 3 teams with 20 engineers and mentored engineers</li>
-            </ul>
-          </div>
+      <!-- Brex -->
+      {% capture brex_staff %}
+        <li>Revamped billing system and worked across cross-functional teams</li>
+        <li>Led the Card Fraud team to ship automation for fraud transactions and modernized dispute management (90% reduction in CX cases)</li>
+        <li>Led the next-generation global payments platform to unify money movement across all products, cutting time to market for new products by 50%</li>
+        <li>Led team implementation of a new banking partner for Brex Cash product</li>
+        <li>Led multi-team effort to implement initial version of Global Reimbursements</li>
+        <li>Served as group tech lead of 3 teams with 20 engineers and mentored engineers</li>
+      {% endcapture %}
 
-          <!-- Senior Engineer Role -->
-          <div class="relative">
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="text-xl font-semibold">Senior Software Engineer</h3>
-              <span class="text-sm text-gray-600 dark:text-gray-400">Feb 2019 - Mar 2021</span>
-            </div>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Led backend development for Rewards points to airline miles conversion</li>
-              <li>Led design and execution of a new onboarding platform</li>
-              <li>Served as tech lead for rewards and onboarding platforms</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      {% capture brex_senior %}
+        <li>Led backend development for Rewards points to airline miles conversion</li>
+        <li>Led design and execution of a new onboarding platform</li>
+        <li>Served as tech lead for rewards and onboarding platforms</li>
+      {% endcapture %}
+
+      {% capture brex_roles %}
+        {% include resume/role.html title="Staff Software Engineer" date="Mar 2021 - Dec 2023" content=brex_staff %}
+        {% include resume/role.html title="Senior Software Engineer" date="Feb 2019 - Mar 2021" content=brex_senior last=true %}
+      {% endcapture %}
+
+      {% include resume/company-group.html
+        company="Brex"
+        company_url="https://www.brex.com"
+        location="San Francisco Bay Area"
+        content=brex_roles
+        border="gray"
+      %}
 
       <!-- Holloway -->
-      <div class="border-l-4 border-slate-500 pl-4">
-        <div class="flex justify-between items-start mb-2">
-          <div>
-            <h3 class="text-xl font-semibold">Member of Technical Staff</h3>
-            <h4 class="text-lg text-gray-600 dark:text-gray-400">Holloway</h4>
-          </div>
-          <div class="text-right">
-            <span class="text-sm text-gray-600 dark:text-gray-400">May 2018 - Feb 2019</span>
-            <p class="text-sm text-gray-600 dark:text-gray-400">San Francisco Bay Area</p>
-          </div>
-        </div>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-          <li>Founding backend and infrastructure engineer</li>
-          <li>Re-architected production infrastructure from a one-off setup to a fully automated architecture using CircleCI, AWS Beanstalk and AWS Batch</li>
-          <li>Built various features on document building pipeline: blog posts, dictionary, SEO optimized pages</li>
-        </ul>
-      </div>
+      {% capture holloway_bullets %}
+        <li>Founding backend and infrastructure engineer</li>
+        <li>Re-architected production infrastructure from a one-off setup to a fully automated architecture using CircleCI, AWS Beanstalk and AWS Batch</li>
+        <li>Built various features on document building pipeline: blog posts, dictionary, SEO optimized pages</li>
+      {% endcapture %}
 
-      <!-- Sysdig Group -->
-      <div class="relative border-l-4 border-red-500">
-        <div class="pl-4">
-          <!-- Company header -->
-          <div class="mb-6">
-            <h4 class="text-lg font-bold text-gray-600 dark:text-gray-400">
-              <a href="https://www.sysdig.com" class="hover:underline" target="_blank">Sysdig</a>
-            </h4>
-            <p class="text-sm text-gray-600 dark:text-gray-400">San Francisco Bay Area</p>
-          </div>
+      {% include resume/job.html
+        title="Member of Technical Staff"
+        company="Holloway"
+        date="May 2018 - Feb 2019"
+        location="San Francisco Bay Area"
+        content=holloway_bullets
+        border="red"
+      %}
 
-          <!-- Engineering Manager Role -->
-          <div class="mb-8 relative">
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="text-xl font-semibold">Engineering Manager</h3>
-              <span class="text-sm text-gray-600 dark:text-gray-400">Mar 2017 - May 2018</span>
-            </div>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Led a newly created Agent Team</li>
-              <li>Hired and onboarded 4 people and supported their growth</li>
-              <li>Helped product team to assess requirements and shape roadmap</li>
-              <li>Led Kubernetes Refactoring project: designed refactoring of codebase from C++ to Golang</li>
-              <li>Led Swarm integration: prototyped integration in Golang and guided team implementation</li>
-              <li>Led Prometheus integration: worked on design and guided implementation</li>
-            </ul>
-          </div>
+      <!-- Sysdig -->
+      {% capture sysdig_manager %}
+        <li>Led a newly created Agent Team</li>
+        <li>Hired and onboarded 4 people and supported their growth</li>
+        <li>Helped product team to assess requirements and shape roadmap</li>
+        <li>Led Kubernetes Refactoring project: designed refactoring of codebase from C++ to Golang</li>
+        <li>Led Swarm integration: prototyped integration in Golang and guided team implementation</li>
+        <li>Led Prometheus integration: worked on design and guided implementation</li>
+      {% endcapture %}
 
-          <!-- Software Engineer Role -->
-          <div class="relative">
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="text-xl font-semibold">Software Engineer</h3>
-              <span class="text-sm text-gray-600 dark:text-gray-400">Oct 2014 - Mar 2017</span>
-            </div>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Lead engineer on Sysdig Agent project: developing zero to 1 major features, managing releases, support issues troubleshooting/fixing</li>
-              <li>Developed automatic Java application metrics collection</li>
-              <li>Integrated statsd server with kernel-level metric interception</li>
-              <li>Created plugin bridge for diverse application metric collection</li>
-              <li>Developed and patented ContainerVision technology for seamless container integration</li>
-              <li>Speaker at Kubecon, Qcon and various conferences across Europe and USA</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      {% capture sysdig_engineer %}
+        <li>Lead engineer on Sysdig Agent project: developing zero to 1 major features, managing releases, support issues troubleshooting/fixing</li>
+        <li>Developed automatic Java application metrics collection</li>
+        <li>Integrated statsd server with kernel-level metric interception</li>
+        <li>Created plugin bridge for diverse application metric collection</li>
+        <li>Developed and patented ContainerVision technology for seamless container integration</li>
+        <li>Speaker at Kubecon, Qcon and various conferences across Europe and USA</li>
+      {% endcapture %}
+
+      {% capture sysdig_roles %}
+        {% include resume/role.html title="Engineering Manager" date="Mar 2017 - May 2018" content=sysdig_manager %}
+        {% include resume/role.html title="Software Engineer" date="Oct 2014 - Mar 2017" content=sysdig_engineer last=true %}
+      {% endcapture %}
+
+      {% include resume/company-group.html
+        company="Sysdig"
+        company_url="https://www.sysdig.com"
+        location="San Francisco Bay Area"
+        content=sysdig_roles
+        border="gray"
+      %}
 
       <!-- A-Tono -->
-      <div class="border-l-4 border-slate-500 pl-4">
-        <div class="flex justify-between items-start mb-2">
-          <div>
-            <h3 class="text-xl font-semibold">Software Engineer</h3>
-            <h4 class="text-lg text-gray-600 dark:text-gray-400">A-Tono</h4>
-          </div>
-          <div class="text-right">
-            <span class="text-sm text-gray-600 dark:text-gray-400">Apr 2012 - Oct 2014</span>
-          </div>
-        </div>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-          <li>Built high-performance message router handling 100k+ daily messages with complex routing rules</li>
-          <li>Implemented high-capacity SMS API services</li>
-          <li>Developed carrier payment integration for mobile ticketing</li>
-          <li>Led migration from QPID to RabbitMQ and MongoDB to Redis</li>
-          <li>Implemented fast phone number carrier mapping database for 32M+ entries</li>
-          <li>Led service migration from Python/C++ to pure C++</li>
-          <li>Configured and managed RabbitMQ and Redis clusters</li>
-        </ul>
-      </div>
+      {% capture atono_bullets %}
+        <li>Built high-performance message router handling 100k+ daily messages with complex routing rules</li>
+        <li>Implemented high-capacity SMS API services</li>
+        <li>Developed carrier payment integration for mobile ticketing</li>
+        <li>Led migration from QPID to RabbitMQ and MongoDB to Redis</li>
+        <li>Implemented fast phone number carrier mapping database for 32M+ entries</li>
+        <li>Led service migration from Python/C++ to pure C++</li>
+        <li>Configured and managed RabbitMQ and Redis clusters</li>
+      {% endcapture %}
+
+      {% include resume/job.html
+        title="Software Engineer"
+        company="A-Tono"
+        date="Apr 2012 - Oct 2014"
+        content=atono_bullets
+        border="red"
+      %}
+
     </div>
   </section>
 
@@ -221,12 +173,12 @@ title: Resume - Luca Marturana
   <section>
     <h2 class="text-2xl font-bold mb-4">Skills</h2>
     <div class="flex flex-wrap gap-2">
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">Team Leadership</span>
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">System Design</span>
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">Distributed Systems</span>
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">Ruby on Rails</span>
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">TypeScript</span>
-      <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-full text-sm">C++</span>
+      {% include resume/skill.html name="Team Leadership" %}
+      {% include resume/skill.html name="System Design" %}
+      {% include resume/skill.html name="Distributed Systems" %}
+      {% include resume/skill.html name="Ruby on Rails" %}
+      {% include resume/skill.html name="TypeScript" %}
+      {% include resume/skill.html name="C++" %}
     </div>
   </section>
 
@@ -234,21 +186,17 @@ title: Resume - Luca Marturana
   <section>
     <h2 class="text-2xl font-bold mb-4">Education</h2>
     <div class="space-y-4">
-      <div>
-        <div class="flex justify-between items-start">
-          <h3 class="text-xl font-semibold">Master degree in Computer Engineering</h3>
-          <span class="text-sm text-gray-600 dark:text-gray-400">2010 - 2012</span>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400">University of Catania</p>
-      </div>
+      {% include resume/education.html
+        degree="Master degree in Computer Engineering"
+        date="2010 - 2012"
+        institution="University of Catania"
+      %}
 
-      <div>
-        <div class="flex justify-between items-start">
-          <h3 class="text-xl font-semibold">Bachelor degree in Computer Engineering</h3>
-          <span class="text-sm text-gray-600 dark:text-gray-400">2007 - 2010</span>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400">University of Catania</p>
-      </div>
+      {% include resume/education.html
+        degree="Bachelor degree in Computer Engineering"
+        date="2007 - 2010"
+        institution="University of Catania"
+      %}
     </div>
   </section>
-</div> 
+</div>

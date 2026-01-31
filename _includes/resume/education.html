@@ -1,0 +1,16 @@
+{% comment %}
+Education entry.
+
+Parameters:
+  - degree: Degree title (required)
+  - date: Date range (required)
+  - institution: School/University name (required)
+{% endcomment %}
+
+<div>
+  <div class="flex justify-between items-start">
+    <h3 class="text-xl font-semibold">{{ include.degree }}</h3>
+    <span class="text-sm text-gray-600 dark:text-gray-400">{{ include.date }}</span>
+  </div>
+  <p class="text-gray-600 dark:text-gray-400">{{ include.institution }}</p>
+</div>

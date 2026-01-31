@@ -1,0 +1,46 @@
+{% comment %}
+Standalone job entry with description or bullet points.
+
+Parameters:
+  - title: Job title (required)
+  - company: Company name (optional)
+  - company_url: Link to company website (optional)
+  - date: Date range (required)
+  - location: Location (optional)
+  - description: Single paragraph description (optional)
+  - border: Border color: "red", "gray", or "slate" (default: red)
+  - content: Captured HTML content for bullet points (optional, use with capture)
+{% endcomment %}
+
+{% assign border_color = include.border | default: "red" %}
+
+<div class="border-l-4 pl-4 {% if border_color == 'gray' %}border-gray-500{% elsif border_color == 'slate' %}border-slate-500{% else %}border-red-500{% endif %}">
+  <div class="flex justify-between items-start mb-2">
+    <div>
+      <h3 class="text-xl font-semibold">{{ include.title }}</h3>
+      {% if include.company %}
+        <h4 class="text-lg text-gray-600 dark:text-gray-400">
+          {% if include.company_url %}
+            <a href="{{ include.company_url }}" class="hover:underline" target="_blank">{{ include.company }}</a>
+          {% else %}
+            {{ include.company }}
+          {% endif %}
+        </h4>
+      {% endif %}
+    </div>
+    <div class="text-right">
+      <span class="text-sm text-gray-600 dark:text-gray-400">{{ include.date }}</span>
+      {% if include.location %}
+        <p class="text-sm text-gray-600 dark:text-gray-400">{{ include.location }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% if include.description %}
+    <p class="text-gray-700 dark:text-gray-300 mb-2">{{ include.description }}</p>
+  {% endif %}
+  {% if include.content %}
+    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+      {{ include.content }}
+    </ul>
+  {% endif %}
+</div>

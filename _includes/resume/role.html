@@ -1,0 +1,19 @@
+{% comment %}
+Role entry within a company group.
+
+Parameters:
+  - title: Role title (required)
+  - date: Date range (required)
+  - last: Boolean, if true removes bottom margin (optional, default: false)
+  - content: Captured HTML content for bullet points (required)
+{% endcomment %}
+
+<div class="{% unless include.last %}mb-8{% endunless %} relative">
+  <div class="flex justify-between items-start mb-2">
+    <h3 class="text-xl font-semibold">{{ include.title }}</h3>
+    <span class="text-sm text-gray-600 dark:text-gray-400">{{ include.date }}</span>
+  </div>
+  <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+    {{ include.content }}
+  </ul>
+</div>

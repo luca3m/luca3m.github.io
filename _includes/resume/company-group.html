@@ -1,0 +1,28 @@
+{% comment %}
+Company group wrapper for multiple roles at the same company.
+
+Parameters:
+  - company: Company name (required)
+  - company_url: Link to company website (optional)
+  - location: Location (required)
+  - border: Border color: "red", "gray", or "slate" (default: red)
+  - content: Captured HTML content containing role entries (required)
+{% endcomment %}
+
+{% assign border_color = include.border | default: "red" %}
+
+<div class="relative border-l-4 {% if border_color == 'gray' %}border-gray-500{% elsif border_color == 'slate' %}border-slate-500{% else %}border-red-500{% endif %}">
+  <div class="pl-4">
+    <div class="mb-6">
+      <h4 class="text-lg font-bold text-gray-600 dark:text-gray-400">
+        {% if include.company_url %}
+          <a href="{{ include.company_url }}" class="hover:underline" target="_blank">{{ include.company }}</a>
+        {% else %}
+          {{ include.company }}
+        {% endif %}
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">{{ include.location }}</p>
+    </div>
+    {{ include.content }}
+  </div>
+</div>
