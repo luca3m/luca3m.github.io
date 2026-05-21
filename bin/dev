@@ -1,2 +1,12 @@
 #!/bin/sh
-exec bundle exec jekyll serve --livereload
+
+export JEKYLL_ENV=development
+
+PORT="${PORT:-9000}"
+
+exec bundle exec jekyll serve \
+  --livereload \
+  --drafts \
+  --future \
+  --port "$PORT" \
+  "$@"
