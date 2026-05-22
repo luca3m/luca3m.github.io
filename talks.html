@@ -1,0 +1,35 @@
+---
+layout: default
+title: Talks
+permalink: /talks/
+---
+
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8">Talks</h1>
+
+  <div class="space-y-6">
+    {% assign talks = site.talks | sort: "date" | reverse %}
+    {% for talk in talks %}
+      <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h2 class="text-2xl font-bold">{{ talk.title }}</h2>
+          <time datetime="{{ talk.date | date_to_xmlschema }}" class="text-sm text-gray-500 dark:text-gray-400">
+            {{ talk.date | date: "%B %-d, %Y" }}
+          </time>
+        </div>
+
+        <p class="font-semibold text-gray-700 dark:text-gray-300 mb-4">{{ talk.event }}</p>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">{{ talk.abstract }}</p>
+
+        {% if talk.slides_url %}
+          <a href="{{ talk.slides_url }}" class="font-semibold inline-flex items-center text-red-500 hover:text-red-700 transition-colors" target="_blank" rel="noopener">
+            Slides
+            <svg class="inline-block w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</div>

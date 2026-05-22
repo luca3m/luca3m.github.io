@@ -17,6 +17,8 @@ tailwind:
 collections:
   projects:
     output: false
+  talks:
+    output: false
 
 social:
   name: Luca Marturana
