@@ -9,7 +9,7 @@ permalink: /projects/
   
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {% for project in site.projects reversed %}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div class="bg-white rounded-lg overflow-hidden ring-1 ring-red-100 hover:ring-2 hover:ring-red-300 transition-all duration-300">
         {% if project.image %}
           <img src="{{ project.image }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
         {% endif %}
