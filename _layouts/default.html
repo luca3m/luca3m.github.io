@@ -16,11 +16,11 @@
     {% endif %}
   </head>
   <body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <!-- Navigation -->
-      <nav class="py-6 print:hidden">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <!-- Mobile navigation -->
+      <nav class="py-6 print:hidden md:hidden">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-xl font-bold hover:text-red-500 transition-colors">{{ site.name }}</a>
+          <a href="/" class="text-2xl font-bold hover:text-red-500 transition-colors">{{ site.name }}</a>
           
           <!-- Mobile menu button -->
           <button type="button" class="md:hidden p-2 cursor-pointer" id="mobile-menu-button">
@@ -35,8 +35,8 @@
           <!-- Navigation links -->
           <div class="hidden md:flex space-x-4" id="menu-items">
             <a href="/resume" class="font-bold hover:text-red-500 transition-colors">Resume</a>
-            <a href="/projects" class="font-bold hover:text-red-500 transition-colors">Projects</a>
             <a href="/talks/" class="font-bold hover:text-red-500 transition-colors">Talks</a>
+            <a href="/projects" class="font-bold hover:text-red-500 transition-colors">Projects</a>
           </div>
         </div>
 
@@ -44,67 +44,124 @@
         <div class="hidden md:hidden mt-4" id="mobile-menu">
           <div class="flex flex-col space-y-4">
             <a href="/resume" class="font-bold hover:text-red-500 transition-colors">Resume</a>
-            <a href="/projects" class="font-bold hover:text-red-500 transition-colors">Projects</a>
             <a href="/talks/" class="font-bold hover:text-red-500 transition-colors">Talks</a>
-            <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" class="font-bold hover:text-red-500 transition-colors">LinkedIn</a>
-            <a href="mailto:lucam@hey.com" target="_blank" class="font-bold hover:text-red-500 transition-colors">Email</a>
+            <a href="/projects" class="font-bold hover:text-red-500 transition-colors">Projects</a>
+            <div class="flex flex-col space-y-4 pt-4">
+              <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" rel="noopener" class="inline-flex items-center font-bold hover:text-red-500 transition-colors">
+                <span class="linkedin-icon h-5 w-5 mr-2" aria-hidden="true"></span>
+                LinkedIn
+              </a>
+              <a href="mailto:lucam@hey.com" class="inline-flex items-center font-bold hover:text-red-500 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Email
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
-      <!-- Main content -->
-      <main class="py-8">
-        {{ content }}
-      </main>
+      <div class="md:grid md:grid-cols-[16rem_minmax(0,1fr)] lg:grid-cols-[18rem_minmax(0,1fr)] md:gap-12 lg:gap-16 print:block">
+        <!-- Sidebar -->
+        <aside class="hidden md:block print:hidden py-8">
+          <div class="sticky top-8">
+            <a href="/" class="block group mb-6">
+              <img src="/assets/images/avatar.webp" alt="Luca Marturana" width="112" height="112" class="w-28 h-28 rounded-full object-cover mb-4 ring-1 ring-gray-200 dark:ring-gray-700">
+              <span class="block text-2xl font-bold group-hover:text-red-500 transition-colors">{{ site.title }}</span>
+            </a>
 
-      <!-- Footer -->
-      <footer class="py-6">
-        <div class="flex justify-end">
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            Copyright © 2014-2026 Luca Marturana. 
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="hover:text-red-500 transition-colors">License</a>
-          </p>
+            <p class="text-sm leading-6 text-gray-700 dark:text-gray-300 mb-8">
+              {{ site.description }}
+            </p>
+
+            <nav aria-label="Main navigation" class="mb-8">
+              <div class="flex flex-col space-y-3">
+                <a href="/" class="font-bold hover:text-red-500 transition-colors">Writing</a>
+                <a href="/resume" class="font-bold hover:text-red-500 transition-colors">Resume</a>
+                <a href="/talks/" class="font-bold hover:text-red-500 transition-colors">Talks</a>
+                <a href="/projects" class="font-bold hover:text-red-500 transition-colors">Projects</a>
+              </div>
+            </nav>
+
+            <nav aria-label="Contact links">
+              <div class="flex flex-col space-y-3 text-sm">
+                <a href="https://www.linkedin.com/in/lucamarturana/" target="_blank" rel="noopener" class="inline-flex items-center font-bold hover:text-red-500 transition-colors">
+                  <span class="linkedin-icon h-5 w-5 mr-2" aria-hidden="true"></span>
+                  LinkedIn
+                </a>
+                <a href="mailto:lucam@hey.com" class="inline-flex items-center font-bold hover:text-red-500 transition-colors">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  Email
+                </a>
+              </div>
+            </nav>
+          </div>
+        </aside>
+
+        <div class="min-w-0">
+          <!-- Main content -->
+          <main class="py-8 print:py-0">
+            {{ content }}
+          </main>
+
+          <!-- Footer -->
+          <footer class="py-6">
+            <div class="flex justify-end">
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Copyright © 2014-2026 Luca Marturana. 
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="hover:text-red-500 transition-colors">License</a>
+              </p>
+            </div>
+          </footer>
         </div>
-      </footer>
+      </div>
     </div>
 
     <script>
       // Add transition styles
       const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
-      mobileMenu.style.transformOrigin = 'top';
+      if (mobileMenu) {
+        mobileMenu.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
+        mobileMenu.style.transformOrigin = 'top';
+      }
 
       // Mobile menu toggle with animation
-      document.getElementById('mobile-menu-button').addEventListener('click', function() {
-        const menuIcon = document.querySelector('.menu-icon');
-        const closeIcon = document.querySelector('.close-icon');
-        
-        if (mobileMenu.classList.contains('hidden')) {
-          // Show menu
-          mobileMenu.classList.remove('hidden');
-          mobileMenu.style.transform = 'scaleY(0)';
-          mobileMenu.style.opacity = '0';
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          const menuIcon = document.querySelector('.menu-icon');
+          const closeIcon = document.querySelector('.close-icon');
           
-          // Force reflow
-          mobileMenu.offsetHeight;
-          
-          // Animate in
-          mobileMenu.style.transform = 'scaleY(1)';
-          mobileMenu.style.opacity = '1';
-        } else {
-          // Animate out
-          mobileMenu.style.transform = 'scaleY(0)';
-          mobileMenu.style.opacity = '0';
-          
-          // Hide after animation
-          setTimeout(() => {
-            mobileMenu.classList.add('hidden');
-          }, 300);
-        }
+          if (mobileMenu.classList.contains('hidden')) {
+            // Show menu
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.style.transform = 'scaleY(0)';
+            mobileMenu.style.opacity = '0';
+            
+            // Force reflow
+            mobileMenu.offsetHeight;
+            
+            // Animate in
+            mobileMenu.style.transform = 'scaleY(1)';
+            mobileMenu.style.opacity = '1';
+          } else {
+            // Animate out
+            mobileMenu.style.transform = 'scaleY(0)';
+            mobileMenu.style.opacity = '0';
+            
+            // Hide after animation
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          }
 
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-      });
+          menuIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+      }
     </script>
   </body>
 </html>

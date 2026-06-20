@@ -1,7 +1,7 @@
-name: luca3m blog
-title: luca3m blog
-tagline: "A blog about software development and other things"
-description: "A blog about software development and other things"
+name: Luca Marturana
+title: Luca Marturana
+tagline: "Software Engineer focused on product development, system design, and technical foundations that scale. Interested in AI, personal finance, and legal tech."
+description: "Software Engineer focused on product development, system design, and technical foundations that scale. Interested in AI, personal finance, and legal tech."
 url: "https://luca3m.me"
 markdown: kramdown
 exclude: [ "tailwind.config.js", "README.md", "CNAME" ]

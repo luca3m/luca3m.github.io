@@ -4,10 +4,10 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="container mx-auto px-4 py-8">
-  <h1 class="text-4xl font-bold mb-8">My Projects</h1>
+<div>
+  <h1 class="text-4xl font-bold mb-12">Projects</h1>
   
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {% for project in site.projects reversed %}
       <div class="bg-white rounded-lg overflow-hidden ring-1 ring-red-100 hover:ring-2 hover:ring-red-300 transition-all duration-300">
         {% if project.image %}
