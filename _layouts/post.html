@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<article class="w-full">
+<article class="w-full max-w-prose">
   <header class="mb-8">
-    <h1 class="text-3xl font-bold mb-2">{{ page.title }}</h1>
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">{{ page.title }}</h1>
     <p class="text-sm text-gray-600 dark:text-gray-400">{{ page.date | date_to_string }}</p>
   </header>
-  <div class="prose dark:prose-invert max-w-none">
+  <div class="text-lg leading-8">
     {{ content }}
   </div>
 </article>

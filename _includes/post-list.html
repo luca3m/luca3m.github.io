@@ -1,9 +1,12 @@
 {% assign posts_limit = include.limit | default: site.posts.size %}
 {% for post in site.posts limit: posts_limit %}
 <article class="mb-12">
-  <h2 class="text-2xl font-bold mb-4">
+  <h2 class="text-2xl font-bold mb-2">
     <a href="{{ post.url }}" class="hover:text-red-500 transition-colors">{{ post.title }}</a>
   </h2>
+  <time datetime="{{ post.date | date_to_xmlschema }}" class="block text-sm text-gray-500 dark:text-gray-400 mb-4">
+    {{ post.date | date: "%-d %B %Y" }}
+  </time>
   <p class="text-gray-700 dark:text-gray-300 mb-4">{{ post.excerpt }}</p>
 
   <div class="flex justify-end">

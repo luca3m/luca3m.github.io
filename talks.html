@@ -13,7 +13,7 @@ permalink: /talks/
       <article class="bg-white dark:bg-gray-800 rounded-lg p-6 ring-1 ring-red-100 dark:ring-red-900/50 hover:ring-2 hover:ring-red-300 dark:hover:ring-red-500/60 transition-all duration-300">
         <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
           <h2 class="text-2xl font-bold">{{ talk.title }}</h2>
-          <time datetime="{{ talk.date | date_to_xmlschema }}" class="text-sm text-gray-500 dark:text-gray-400">
+          <time datetime="{{ talk.date | date_to_xmlschema }}" class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap shrink-0">
             {{ talk.date | date: "%B %-d, %Y" }}
           </time>
         </div>
