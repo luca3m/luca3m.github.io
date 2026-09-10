@@ -3,10 +3,8 @@ layout: post
 title: "Fast LLM Evaluations at Spark: CSVs Over Frameworks"
 date: 2026-01-19
 canonical_url: https://insights.sparkhq.ai/p/evals
----
-
-*Note: This post was originally published on [Spark's blog](https://insights.sparkhq.ai/p/evals) as part of their AI Engineering Series.*
-
+original_publication: "Spark's blog"
+excerpt: "Building AI products at a startup requires speed over sophistication. We ditched complex evaluation frameworks for simple CSVs and custom scripts—and it's been surprisingly effective."
 ---
 
 ## TL;DR
@@ -30,7 +28,7 @@ Our evaluation stack is intentionally unglamorous. Here's what this looks like i
 At the core, we use plain CSV files to track labeled data. When we want to evaluate a task, we manually create a small but high-quality dataset ourselves, with engineers labeling data directly. These CSVs act as our golden datasets. In the example below, you can see a dataset snippet related to a location tagging task:
 
 <div class="my-6 overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
-  <table class="min-w-full text-sm">
+  <table class="min-w-full text-base leading-6">
     <thead class="bg-gray-50 dark:bg-gray-800">
       <tr>
         <th class="px-4 py-3 text-left font-semibold">filename</th>
@@ -40,18 +38,18 @@ At the core, we use plain CSV files to track labeled data. When we want to evalu
     </thead>
     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
       <tr>
-        <td class="px-4 py-3 font-mono text-xs">content-1002065.html</td>
-        <td class="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">pv-magazine.com/…/pinal-county-approves…</td>
+        <td class="px-4 py-3 font-mono">content-1002065.html</td>
+        <td class="px-4 py-3 text-gray-600 dark:text-gray-400">pv-magazine.com/…/pinal-county-approves…</td>
         <td class="px-4 py-3">Pinal County, AZ</td>
       </tr>
       <tr>
-        <td class="px-4 py-3 font-mono text-xs">content-1002066.html</td>
-        <td class="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">maricopa.gov/…/Minutes/_03142024-1847</td>
+        <td class="px-4 py-3 font-mono">content-1002066.html</td>
+        <td class="px-4 py-3 text-gray-600 dark:text-gray-400">maricopa.gov/…/Minutes/_03142024-1847</td>
         <td class="px-4 py-3">Maricopa County, AZ</td>
       </tr>
       <tr>
-        <td class="px-4 py-3 font-mono text-xs">content-1002067.html</td>
-        <td class="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">federalregister.gov/…/blm-arizona-environmental…</td>
+        <td class="px-4 py-3 font-mono">content-1002067.html</td>
+        <td class="px-4 py-3 text-gray-600 dark:text-gray-400">federalregister.gov/…/blm-arizona-environmental…</td>
         <td class="px-4 py-3">Arizona</td>
       </tr>
     </tbody>

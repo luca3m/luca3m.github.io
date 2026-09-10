@@ -62,6 +62,36 @@
   }
 }
 
+.post-content {
+  h2 {
+    @apply mt-10 mb-4;
+  }
+
+  ol, ul {
+    @apply list-outside pl-7 mb-6;
+  }
+
+  li {
+    @apply pl-1;
+  }
+
+  li + li {
+    @apply mt-4;
+  }
+
+  li > p {
+    @apply mb-3;
+  }
+
+  li > :last-child {
+    @apply mb-0;
+  }
+
+  :not(pre) > code {
+    overflow-wrap: anywhere;
+  }
+}
+
 .linkedin-icon {
   @apply inline-block shrink-0 bg-current;
   mask: url("/assets/images/InBug-Black.png") center / contain no-repeat;

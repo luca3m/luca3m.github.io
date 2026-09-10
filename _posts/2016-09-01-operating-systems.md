@@ -2,6 +2,8 @@
 layout: post
 title:  "Operating systems are a huge pile of technical debt"
 categories: english
+canonical_url: https://www.sysdig.com/blog/operating-systems-huge-pile-technical-debt
+original_publication: "Sysdig's blog"
 ---
 
 Developers are responsible for creating new, powerful software. This is what we do, day in and day out. But much of the software we create is based on the work of others. It’s not only their software from yesterday, but also from years or decades before. That creates a complex set of challenges when it comes to understanding the behavior of our own software, let alone someone else’s. 
@@ -90,5 +92,3 @@ This is absolutely true: Linus Torvalds’ mantra is “never break userspace”
 ## Side note
 
 Why php-fpm was using fork? It wasn’t the one to blame for it. Alpine linux uses muslc instead of glibc. Digging deeper, I found it uses the fork system call to implement the fork() function instead of clone, as glibc does. It’s probably because clone is more complicated to use.
-
-*Note: this blog post has been originally published on [Sysdig official blog](https://sysdig.com/blog)*

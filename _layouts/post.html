@@ -4,9 +4,14 @@ layout: default
 <article class="w-full max-w-prose">
   <header class="mb-8">
     <h1 class="text-3xl md:text-4xl font-bold mb-2">{{ page.title }}</h1>
-    <p class="text-sm text-gray-600 dark:text-gray-400">{{ page.date | date_to_string }}</p>
+    <time datetime="{{ page.date | date_to_xmlschema }}" class="block text-sm text-gray-600 dark:text-gray-400">{{ page.date | date: "%-d %B %Y" }}</time>
+    {% if page.original_publication and page.canonical_url %}
+    <p class="mt-2 mb-0 text-sm text-gray-600 dark:text-gray-400">
+      Originally published on <a href="{{ page.canonical_url | escape }}">{{ page.original_publication | escape }}</a>.
+    </p>
+    {% endif %}
   </header>
-  <div class="text-lg leading-8">
+  <div class="post-content text-lg leading-8">
     {{ content }}
   </div>
 </article>

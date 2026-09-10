@@ -10,6 +10,6 @@
   <time datetime="{{ post.date | date_to_xmlschema }}" class="block text-sm text-gray-500 dark:text-gray-400 mb-4">
     {{ post.date | date: "%-d %B %Y" }}
   </time>
-  <p class="text-gray-700 dark:text-gray-300">{{ post.excerpt }}</p>
+  <div class="text-gray-700 dark:text-gray-300">{{ post.excerpt }}</div>
 </article>
 {% endfor %}
