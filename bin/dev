@@ -1,12 +1,91 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# Run this checkout's Jekyll server in a detached tmux session.
+set -euo pipefail
 
-export JEKYLL_ENV=development
+root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)
+name="luca3m-dev-$(printf '%s' "$root" | cksum | awk '{print $1}')"
 
-PORT="${PORT:-9000}"
+usage() {
+  cat <<'HELP'
+Usage: ./bin/dev <up|down|status|attach|logs> [options]
+  up [jekyll options]  Start Jekyll (PORT defaults to 9000)
+  down                 Stop this checkout's session and server
+  status               Show the session and server state
+  attach               Open the tmux session (detach with Ctrl-b d)
+  logs [lines]         Print recent server output (default: 80 lines)
+HELP
+}
 
-exec bundle exec jekyll serve \
-  --livereload \
-  --drafts \
-  --future \
-  --port "$PORT" \
-  "$@"
+case "${1:-}" in
+  -h|--help|help) usage; exit 0 ;;
+  up|down|status|attach|logs) action=$1; shift ;;
+  *) usage >&2; exit 1 ;;
+esac
+
+if ! command -v tmux >/dev/null 2>&1; then
+  echo 'tmux is required. Install it first (macOS: brew install tmux).' >&2
+  exit 1
+fi
+
+session_exists() { tmux has-session -t "=$name" 2>/dev/null; }
+require_session() {
+  if ! session_exists; then
+    echo "No session '$name'. Run ./bin/dev up first." >&2
+    exit 1
+  fi
+}
+
+case "$action" in
+  up)
+    if session_exists; then
+      echo "Session '$name' already exists. Use ./bin/dev status or ./bin/dev logs."
+      exit 0
+    fi
+    cd "$root"
+    command -v bundle >/dev/null 2>&1 || { echo 'Bundler is required.' >&2; exit 1; }
+    bundle check
+    # Quote each argument for the Bash shell in the pane, preserving caller options.
+    printf -v launch 'exec env JEKYLL_ENV=development bundle exec jekyll serve --livereload --drafts --future --port %q' "${PORT:-9000}"
+    for arg in "$@"; do printf -v launch '%s %q' "$launch" "$arg"; done
+    tmux new-session -d -s "$name" -n jekyll -c "$root" -x 160 -y 40 'bash --noprofile --norc'
+    tmux set-option -w -t "=$name:jekyll" remain-on-exit on
+    tmux send-keys -l -t "=$name:jekyll" "$launch"
+    tmux send-keys -t "=$name:jekyll" Enter
+    echo "Started session '$name' (default URL: http://localhost:${PORT:-9000})."
+    echo 'Use ./bin/dev logs to check readiness and the effective URL.'
+    ;;
+  down)
+    if session_exists; then
+      tmux kill-session -t "=$name"
+      echo "Stopped '$name'."
+    else
+      echo "No session '$name'."
+    fi
+    ;;
+  status)
+    if session_exists; then
+      tmux list-panes -t "=$name:jekyll" -F '#{session_name}: #{?pane_dead,exited (status #{pane_dead_status}),running} — #{pane_current_command}'
+    else
+      echo "Session '$name' is down."
+    fi
+    ;;
+  attach)
+    require_session
+    if [[ -n ${TMUX:-} ]]; then
+      tmux switch-client -t "=$name"
+    else
+      tmux attach-session -t "=$name"
+    fi
+    ;;
+  logs)
+    require_session
+    lines=${1:-80}
+    if [[ ! $lines =~ ^[1-9][0-9]*$ ]]; then
+      echo 'Line count must be a positive integer.' >&2
+      exit 1
+    fi
+    tmux capture-pane -p -t "=$name:jekyll" -S "-$lines" |
+      awk '{ lines[NR] = $0; if (NF) last = NR } END { for (i = 1; i <= last; i++) print lines[i] }' |
+      tail -n "$lines"
+    ;;
+esac

@@ -4,7 +4,7 @@ tagline: "Software Engineer focused on product development, system design, and t
 description: "Software Engineer focused on product development, system design, and technical foundations that scale. Interested in AI, personal finance, and legal tech."
 url: "https://luca3m.me"
 markdown: kramdown
-exclude: [ "tailwind.config.js", "README.md", "CNAME" ]
+exclude: [ "tailwind.config.js", "README.md", "AGENTS.md", "bin", "CNAME" ]
 permalink: /:year/:month/:day/:title/
 
 plugins:
