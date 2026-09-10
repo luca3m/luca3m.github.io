@@ -3,7 +3,7 @@
 - Use the Ruby and Node versions in `.tool-versions`, Bundler, and tmux.
 - From the repository root, run `bundle install` when dependencies are missing.
 - Start the test environment with `./bin/dev up`. Jekyll runs in a detached tmux
-  session and survives the shell that started it. Development mode includes live
+  session named `luca3m.me` and survives the shell that started it. Development mode includes live
   reload, drafts, and future posts. The default URL is `http://localhost:9000`.
 - Run `./bin/dev logs` and wait for Jekyll's server-ready message before browser
   testing. `./bin/dev status` shows whether the process is running or has exited;
@@ -12,9 +12,9 @@
 - Use `./bin/dev logs 150` for more output, or `./bin/dev attach` for the live
   terminal. Detach with Ctrl-b then d to leave the server running.
 - `PORT=9001 ./bin/dev up` changes the HTTP port. Extra Jekyll options may follow
-  `up`, for example `PORT=9001 ./bin/dev up --livereload-port 35730`. Each checkout
-  has its own session, but concurrent checkouts need distinct HTTP and live-reload
-  ports. Repeating `up` reuses the existing session; stop it before changing options.
+  `up`, for example `PORT=9001 ./bin/dev up --livereload-port 35730`. All checkouts
+  use the same session. Repeating `up` reuses the existing session; stop it before
+  changing options or checkouts.
 - Use **agent-browser** as the default tool for browser testing. For example:
 
   ```sh
@@ -29,4 +29,4 @@
   missing, install the CLI and run `agent-browser install` for its browser.
 - Run `bundle exec jekyll build` to verify build-related changes.
 - When testing is finished, close your browser session and run `./bin/dev down`.
-  This stops only this checkout's tmux session. Repeating `down` is safe.
+  This stops the `luca3m.me` tmux session. Repeating `down` is safe.

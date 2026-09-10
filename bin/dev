@@ -3,13 +3,13 @@
 set -euo pipefail
 
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)
-name="luca3m-dev-$(printf '%s' "$root" | cksum | awk '{print $1}')"
+name="luca3m.me"
 
 usage() {
   cat <<'HELP'
 Usage: ./bin/dev <up|down|status|attach|logs> [options]
   up [jekyll options]  Start Jekyll (PORT defaults to 9000)
-  down                 Stop this checkout's session and server
+  down                 Stop the luca3m.me session and server
   status               Show the session and server state
   attach               Open the tmux session (detach with Ctrl-b d)
   logs [lines]         Print recent server output (default: 80 lines)
@@ -27,7 +27,8 @@ if ! command -v tmux >/dev/null 2>&1; then
   exit 1
 fi
 
-session_exists() { tmux has-session -t "=$name" 2>/dev/null; }
+# A trailing colon makes dotted names unambiguously session targets.
+session_exists() { tmux has-session -t "=$name:" 2>/dev/null; }
 require_session() {
   if ! session_exists; then
     echo "No session '$name'. Run ./bin/dev up first." >&2
@@ -56,7 +57,7 @@ case "$action" in
     ;;
   down)
     if session_exists; then
-      tmux kill-session -t "=$name"
+      tmux kill-session -t "=$name:"
       echo "Stopped '$name'."
     else
       echo "No session '$name'."
@@ -72,9 +73,9 @@ case "$action" in
   attach)
     require_session
     if [[ -n ${TMUX:-} ]]; then
-      tmux switch-client -t "=$name"
+      tmux switch-client -t "=$name:"
     else
-      tmux attach-session -t "=$name"
+      tmux attach-session -t "=$name:"
     fi
     ;;
   logs)
